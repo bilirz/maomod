@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "maomod:item/creeper_quiver_1"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bow"
+    },
+    {
+      "item": "minecraft:creeper_head"
+    }
+  ],
+  "result": {
+    "item": "maomod:creeper_bow"
+  }
+}

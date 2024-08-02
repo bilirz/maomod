@@ -1,0 +1,38 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "maomod:item/creeper_quiver_0"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 1
+      },
+      "model": "maomod:item/creeper_quiver_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 2
+      },
+      "model": "maomod:item/creeper_quiver_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3
+      },
+      "model": "maomod:item/creeper_quiver_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 4
+      },
+      "model": "maomod:item/creeper_quiver_4"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 5
+      },
+      "model": "maomod:item/creeper_quiver_5"
+    }
+  ]
+}

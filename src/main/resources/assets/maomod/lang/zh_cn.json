@@ -1,0 +1,23 @@
+{
+  "category.maomod": "苦力怕弓",
+  "enchantment.maomod.expansion": "扩容",
+  "enchantment.maomod.tracking": "追踪",
+  "entity.maomod.creeper_body": "苦力怕身体",
+  "entity.maomod.creeper_head": "苦力怕头",
+  "entity.maomod.creeper_legs": "苦力怕腿",
+  "hud.quiver.creeper_count": "总苦力怕: %d",
+  "item.maomod.cat_missile": "猫猫反导",
+  "item.maomod.creeper_bow": "苦力怕弓",
+  "item.maomod.creeper_emp": "EMP",
+  "item.maomod.creeper_item": "苦力怕",
+  "item.maomod.creeper_quiver": "箭袋",
+  "item.maomod.creeper_radar": "苦力怕雷达",
+  "item.maomod.spawner_creeper_quiver": "刷怪箭袋",
+  "item.maomod.spawner_shard": "刷怪笼碎片",
+  "itemGroup.mao_group": "三连关注",
+  "key.maomod.toggle_creeper_hub": "切换显示苦力怕总数",
+  "tooltip.quiver.creeper_count": "苦力怕: %d/%d",
+  "tooltip.quiver.next_spawn": "%d 秒后刷新",
+  "tooltip.quiver.reached_max": "苦力怕已满",
+  "tooltip.quiver.ready_to_spawn": "准备刷新一个苦力怕"
+}

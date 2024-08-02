@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "maomod:spawner_shard"
+    },
+    "B": {
+      "item": "maomod:creeper_quiver"
+    }
+  },
+  "result": {
+    "item": "maomod:spawner_creeper_quiver"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "item/bow",
+  "textures": {
+    "layer0": "maomod:item/creeper_bow_pulling_2"
+  }
+}

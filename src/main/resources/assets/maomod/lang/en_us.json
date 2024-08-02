@@ -1,0 +1,23 @@
+{
+  "category.maomod": "creeper bow",
+  "enchantment.maomod.expansion": "expansion",
+  "enchantment.maomod.tracking": "tracking",
+  "entity.maomod.creeper_body": "Creeper Body",
+  "entity.maomod.creeper_head": "Creeper Head",
+  "entity.maomod.creeper_legs": "Creeper Legs",
+  "hud.quiver.creeper_count": "Creepers: %d",
+  "item.maomod.cat_missile": "Cat missile",
+  "item.maomod.creeper_bow": "Creeper Bow",
+  "item.maomod.creeper_emp": "EMP",
+  "item.maomod.creeper_item": "CREEPER",
+  "item.maomod.creeper_quiver": "Quiver",
+  "item.maomod.creeper_radar": "Creeper Radar",
+  "item.maomod.spawner_creeper_quiver": "Spawner Quiver",
+  "item.maomod.spawner_shard": "Spawner Shard",
+  "itemGroup.mao_group": "mao's group",
+  "key.maomod.toggle_creeper_hub": "Toggle display coolie afraid total",
+  "tooltip.quiver.creeper_count": "Creepers: %d/%d",
+  "tooltip.quiver.next_spawn": "Next spawn in: %d seconds",
+  "tooltip.quiver.reached_max": "Max creepers reached",
+  "tooltip.quiver.ready_to_spawn": "Ready to spawn a creeper"
+}

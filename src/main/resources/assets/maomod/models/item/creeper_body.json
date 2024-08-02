@@ -1,0 +1,95 @@
+{
+  "texture_size": [
+    64,
+    32
+  ],
+  "textures": {
+    "0": "creeper",
+    "particle": "creeper"
+  },
+  "elements": [
+    {
+      "name": "body",
+      "from": [
+        -4,
+        6,
+        -2
+      ],
+      "to": [
+        4,
+        18,
+        2
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            5,
+            10,
+            7,
+            16
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            10,
+            5,
+            16
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            8,
+            10,
+            10,
+            16
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            7,
+            10,
+            8,
+            16
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            7,
+            10,
+            5,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            9,
+            8,
+            7,
+            10
+          ],
+          "texture": "#0"
+        }
+      }
+    }
+  ],
+  "groups": [
+    {
+      "name": "body",
+      "origin": [
+        0,
+        18,
+        0
+      ],
+      "color": 0,
+      "children": [
+        0
+      ]
+    }
+  ]
+}

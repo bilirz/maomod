@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "maomod",
+  "version": "${version}",
+  "name": "maomod",
+  "description": "认真猫的模组开发之旅",
+  "authors": [
+    "BiliRZ"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "CC BY-NC 4.0",
+  "icon": "assets/maomod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.bilirz.maomod.Maomod"
+    ],
+    "client": [
+      "com.bilirz.maomod.MaomodClient"
+    ]
+  },
+  "mixins": [
+    "maomod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": "~1.20.4",
+    "java": ">=17",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
