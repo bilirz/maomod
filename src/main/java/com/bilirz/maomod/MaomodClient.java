@@ -20,18 +20,20 @@ public class MaomodClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        HudRenderCallback.EVENT.register(new QuiverHudRenderer());
-        ModItemProperties.registerItemProperties();
+        HudRenderCallback.EVENT.register(new QuiverHudRenderer()); // 注册HUD渲染回调
+        ModItemProperties.registerItemProperties(); // 注册自定义物品属性
 
+        // 注册实体渲染器
         EntityRendererRegistry.register(ModEntities.CREEPER_HEAD, CreeperHeadRenderer::new);
         EntityRendererRegistry.register(ModEntities.CREEPER_BODY, CreeperBodyRenderer::new);
         EntityRendererRegistry.register(ModEntities.CREEPER_LEGS, CreeperLegsRenderer::new);
 
+        // 注册实体模型图层
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.CREEPER_HEAD, CreeperHeadModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.CREEPER_BODY, CreeperBodyModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.CREEPER_LEGS, CreeperLegsModel::getTexturedModelData);
 
-        ModKeyBindings.registerKeyBindings();
+        ModKeyBindings.registerKeyBindings(); // 注册自定义键位绑定
     }
 
 }

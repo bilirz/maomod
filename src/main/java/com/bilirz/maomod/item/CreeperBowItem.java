@@ -29,17 +29,16 @@ import java.util.List;
 import java.util.Objects;
 
 public class CreeperBowItem extends BowItem {
-    private static final List<CreeperWithEnchantments> creeperList = new ArrayList<>();
+    private static final List<CreeperWithEnchantments> creeperList = new ArrayList<>(); // 存储被发射的苦力怕
     private static final double GRAVITY = 0.05; // 定义重力加速度
+    private CreeperRadar creeperRadar = null; // 定义雷达对象
 
-    private CreeperRadar creeperRadar = null;
-
+    // 构造函数，注册服务器的Tick事件处理
     public CreeperBowItem(Settings settings) {
         super(settings);
 
         ServerTickEvents.END_SERVER_TICK.register(server -> {
-            // 初始化 CreeperRadar
-            this.creeperRadar = new CreeperRadar(server);
+            this.creeperRadar = new CreeperRadar(server); // 初始化 苦力怕雷达
 
             Iterator<CreeperWithEnchantments> iterator = creeperList.iterator();
             while (iterator.hasNext()) {
@@ -47,6 +46,7 @@ public class CreeperBowItem extends BowItem {
                 CreeperEntity creeper = creeperWithEnchantments.creeper;
                 World world = creeper.getWorld();
 
+                // 处理苦力怕在地面上的行为
                 if (creeper.isOnGround()) {
                     if (creeperWithEnchantments.hasChanneling && creeperWithEnchantments.lightningCount < 3) {
                         LightningEntity lightning = EntityType.LIGHTNING_BOLT.create(world);
@@ -57,26 +57,27 @@ public class CreeperBowItem extends BowItem {
                         }
                     }
                     if (!creeperWithEnchantments.isMultishot) {
-                        creeper.ignite();
+                        creeper.ignite(); // 点燃苦力怕
                     }
                     if (creeperWithEnchantments.lightningCount >= 3) {
                         iterator.remove();
                     }
                 } else if (creeperWithEnchantments.hasTracking) {
-                    PlayerEntity target = findNearestPlayer(world, creeper, creeperWithEnchantments.owner);
+                    PlayerEntity target = findNearestPlayer(world, creeper, creeperWithEnchantments.owner); // 查找最近的玩家
                     if (target != null) {
                         Vec3d direction = predictTargetPosition(target).subtract(creeper.getPos()).normalize();
                         double speedMultiplier = creeperWithEnchantments.baseSpeedMultiplier;
-                        creeper.setVelocity(direction.x * speedMultiplier, direction.y * speedMultiplier, direction.z * speedMultiplier);
+                        creeper.setVelocity(direction.x * speedMultiplier, direction.y * speedMultiplier, direction.z * speedMultiplier);  // 设置苦力怕的跟踪速度
                     }
                 }
 
                 Vec3d velocity = creeper.getVelocity();
-                creeper.setVelocity(velocity.x, velocity.y - GRAVITY, velocity.z);
+                creeper.setVelocity(velocity.x, velocity.y - GRAVITY, velocity.z); // 施加重力
             }
         });
     }
 
+    // 检查苦力怕是否被指定的射手射击
     public static boolean isCreeperShotBy(CreeperEntity creeper, LivingEntity shooter) {
         for (CreeperWithEnchantments cwe : creeperList) {
             if (cwe.getCreeper() == creeper && cwe.getShooter() == shooter) {
@@ -86,6 +87,7 @@ public class CreeperBowItem extends BowItem {
         return false;
     }
 
+    // 查找距离苦力怕最近的玩家
     private PlayerEntity findNearestPlayer(World world, CreeperEntity creeper, LivingEntity owner) {
         Box searchBox = new Box(creeper.getBlockPos()).expand(20, 20, 20);
         List<PlayerEntity> players = world.getEntitiesByClass(PlayerEntity.class, searchBox, player -> player != owner);
@@ -102,11 +104,12 @@ public class CreeperBowItem extends BowItem {
         return nearestPlayer;
     }
 
+    // 预测目标位置，增加随机偏差
     private Vec3d predictTargetPosition(LivingEntity target) {
         Vec3d targetVelocity = target.getVelocity();
         Vec3d predictedPosition = target.getPos().add(targetVelocity.multiply(5));
 
-        // 增加随机偏差  -1 到 1 之间的随机偏差
+        // 增加随机偏差 -1 到 1 之间的随机偏差
         double randomOffsetX = (Math.random() - 0.5) * 2;
         double randomOffsetY = (Math.random() - 0.5) * 2;
         double randomOffsetZ = (Math.random() - 0.5) * 2;
@@ -115,6 +118,7 @@ public class CreeperBowItem extends BowItem {
         return predictedPosition;
     }
 
+    // 处理弓的使用行为
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
@@ -142,10 +146,12 @@ public class CreeperBowItem extends BowItem {
         }
     }
 
+    // 通知雷达用户
     private void notifyRadarUsers(PlayerEntity user, String action) {
         creeperRadar.notifyRadarUsers(user, action);
     }
 
+    // 停止使用弓时调用
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
         if (user instanceof PlayerEntity playerEntity) {
             if (!world.isClient) {
@@ -158,6 +164,7 @@ public class CreeperBowItem extends BowItem {
                 int multishotLevel = EnchantmentHelper.getLevel(Enchantments.MULTISHOT, stack);
                 boolean isMultishot = multishotLevel > 0;
 
+                // 处理多重射击
                 if (isMultishot) {
                     EntityType[] entityTypes = new EntityType[]{
                             ModEntities.CREEPER_HEAD,
@@ -191,6 +198,7 @@ public class CreeperBowItem extends BowItem {
                         }
                     }
                 } else {
+                    // 处理单一射击
                     CreeperEntity creeper = new CreeperEntity(EntityType.CREEPER, world);
                     creeper.setPosition(playerEntity.getX(), playerEntity.getEyeY() - 0.1, playerEntity.getZ());
 
@@ -215,6 +223,7 @@ public class CreeperBowItem extends BowItem {
                 world.playSound(null, playerEntity.getX(), playerEntity.getY(), playerEntity.getZ(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS, 1.0F, 1.0F);
                 stack.damage(1, playerEntity, (p) -> p.sendToolBreakStatus(playerEntity.getActiveHand()));
 
+                // 减少玩家箭袋中的苦力怕数量
                 for (ItemStack quiverStack : playerEntity.getInventory().main) {
                     if (quiverStack.getItem() instanceof CreeperQuiverItem creeperQuiverItem) {
                         if (creeperQuiverItem.getCreeperCount(quiverStack) > 0) {

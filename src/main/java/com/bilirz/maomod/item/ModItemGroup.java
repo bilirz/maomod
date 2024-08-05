@@ -10,10 +10,14 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class ModItemGroup {
+
+    // 定义并注册自定义物品组
     public static final ItemGroup MAO_GROUP = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(Maomod.MOD_ID, "mao_group"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemGroup.mao_group"))
-                    .icon(() -> new ItemStack(ModItems.CREEPER_QUIVER)).entries((displayContext, entries) -> {
+            new Identifier(Maomod.MOD_ID, "mao_group"), // 注册物品组ID
+            FabricItemGroup.builder()
+                    .displayName(Text.translatable("itemGroup.mao_group"))  // 设置物品组名称
+                    .icon(() -> new ItemStack(ModItems.CREEPER_QUIVER)) // 设置物品组图标
+                    .entries((displayContext, entries) -> { // 添加物品到物品组中
                         entries.add(ModItems.CREEPER_QUIVER);
                         entries.add(ModItems.SPAWNER_CREEPER_QUIVER);
                         entries.add(ModItems.CREEPER_BOW);
@@ -24,6 +28,7 @@ public class ModItemGroup {
                         entries.add(ModItems.CREEPER_ITEM);
                     }).build());
 
+    // 注册物品组的方法
     public static void registerModItemsGroup() {
     }
 }

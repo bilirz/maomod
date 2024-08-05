@@ -3,7 +3,6 @@ package com.bilirz.maomod;
 import com.bilirz.maomod.enchantment.ModEnchantments;
 import com.bilirz.maomod.entity.ModEntities;
 import com.bilirz.maomod.event.ModBlockBreakHandler;
-import com.bilirz.maomod.event.PlayerVoidTeleportHandler;
 import com.bilirz.maomod.item.ModItemGroup;
 import com.bilirz.maomod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -16,14 +15,13 @@ public class Maomod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ModItems.registerModItems();
-		ModItemGroup.registerModItemsGroup();
-		ModEnchantments.registerModEnchantments();
-		PlayerVoidTeleportHandler.register();
-		ModBlockBreakHandler.register();
-		ModEntities.registerEntities();
-		ModEntities.registerAttributes();
+        ModItems.registerModItems(); // 注册自定义物品
+        ModItemGroup.registerModItemsGroup(); // 注册自定义物品组
+        ModEnchantments.registerModEnchantments(); // 注册自定义附魔
+        ModBlockBreakHandler.register(); // 注册方块破坏事件
+        ModEntities.registerEntities(); // 注册自定义实体
+        ModEntities.registerAttributes(); // 注册实体属性
 
-		LOGGER.info("苦力怕弓已安装！");
+        LOGGER.info("Maomod已安装！");
 	}
 }
