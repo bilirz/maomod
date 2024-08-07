@@ -3,6 +3,10 @@
   "package": "com.bilirz.maomod.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "AreaEffectCloudEntityMixin",
+    "PlayerEntityMixin",
+    "PotionEntityMixin",
+    "PotionItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1
