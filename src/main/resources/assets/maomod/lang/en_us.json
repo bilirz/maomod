@@ -1,5 +1,8 @@
 {
   "category.maomod": "creeper bow",
+  "effect.maomod.enderman": "enderman",
+  "effect.maomod.wet": "Wet",
+  "enchantment.maomod.enderman": "enderman",
   "enchantment.maomod.expansion": "expansion",
   "enchantment.maomod.tracking": "tracking",
   "entity.maomod.creeper_body": "Creeper Body",
