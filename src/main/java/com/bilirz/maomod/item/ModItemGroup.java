@@ -25,7 +25,6 @@ public class ModItemGroup {
                         entries.add(ModItems.CREEPER_EMP);
                         entries.add(ModItems.SPAWNER_SHARD);
                         entries.add(ModItems.CAT_MISSILE);
-                        entries.add(ModItems.CREEPER_ITEM);
                     }).build());
 
     // 注册物品组的方法

@@ -1,6 +1,6 @@
 package com.bilirz.maomod.entity;
 
-import com.bilirz.maomod.entity.custom.CreeperLegsEntity;
+import com.bilirz.maomod.entity.creeper.CreeperLegsEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;

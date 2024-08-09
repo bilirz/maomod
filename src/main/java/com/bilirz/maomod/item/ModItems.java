@@ -22,6 +22,11 @@ public class ModItems {
     public static final Item CAT_MISSILE = registerItems("cat_missile", new CatMissileItem(new Item.Settings().maxCount(1))); // 猫猫反导
     public static final Item CREEPER_ITEM = registerItems("creeper_item", new CatMissileItem(new Item.Settings().maxCount(1))); // 视频演示苦力怕
 
+    // 奸商村民相关注册
+    public static final Item AIR_ITEM = registerItems("air", new Item(new Item.Settings().maxCount(64)));
+    public static final Item DURABLE_BOWL = registerItems("durable_bowl", new Item(new Item.Settings().maxDamage(5))); // 有耐久的碗
+    public static final Item DURABLE_BUCKET = registerItems("durable_bucket", new Item(new Item.Settings().maxDamage(5))); // 有耐久的桶
+
     // 将自定义物品添加到物品组中
     private static void addItemsToItemGroup(FabricItemGroupEntries fabricItemGroupEntries) {
         fabricItemGroupEntries.add(CREEPER_QUIVER);
@@ -31,7 +36,8 @@ public class ModItems {
         fabricItemGroupEntries.add(CREEPER_EMP);
         fabricItemGroupEntries.add(SPAWNER_SHARD);
         fabricItemGroupEntries.add(CAT_MISSILE);
-        fabricItemGroupEntries.add(CREEPER_ITEM);
+        fabricItemGroupEntries.add(DURABLE_BOWL);
+        fabricItemGroupEntries.add(DURABLE_BUCKET);
     }
 
     // 注册单个物品的方法
