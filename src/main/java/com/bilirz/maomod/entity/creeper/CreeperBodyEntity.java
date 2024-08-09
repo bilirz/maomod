@@ -1,4 +1,4 @@
-package com.bilirz.maomod.entity.custom;
+package com.bilirz.maomod.entity.creeper;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;

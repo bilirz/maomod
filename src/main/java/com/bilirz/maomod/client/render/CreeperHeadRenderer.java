@@ -3,7 +3,7 @@ package com.bilirz.maomod.client.render;
 import com.bilirz.maomod.Maomod;
 import com.bilirz.maomod.client.ModModelLayers;
 import com.bilirz.maomod.entity.CreeperHeadModel;
-import com.bilirz.maomod.entity.custom.CreeperHeadEntity;
+import com.bilirz.maomod.entity.creeper.CreeperHeadEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;

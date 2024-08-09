@@ -4,14 +4,13 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 
-// 末影人附魔
-public class EndermanEnchantment extends Enchantment {
+public class ThreatEnchantment extends Enchantment {
 
-    public EndermanEnchantment(Rarity rarity, EquipmentSlot... slots) {
-        super(rarity, EnchantmentTarget.BREAKABLE, slots);
+    protected ThreatEnchantment(Rarity rarity, EquipmentSlot... slots) {
+        super(rarity, EnchantmentTarget.WEAPON, slots);
     }
 
-    // 设置附魔的最大等级，默认使用父类的最大等级
+    // 设置附魔的最大等级为3
     @Override
     public int getMaxLevel() {
         return super.getMaxLevel();

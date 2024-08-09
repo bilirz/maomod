@@ -6,7 +6,8 @@
     "AreaEffectCloudEntityMixin",
     "PlayerEntityMixin",
     "PotionEntityMixin",
-    "PotionItemMixin"
+    "PotionItemMixin",
+    "VillagerEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
