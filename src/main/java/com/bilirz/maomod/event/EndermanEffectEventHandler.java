@@ -2,7 +2,6 @@ package com.bilirz.maomod.event;
 
 import com.bilirz.maomod.effect.ModEffects;
 import com.bilirz.maomod.enchantment.ModEnchantments;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
@@ -21,28 +20,25 @@ public class EndermanEffectEventHandler {
     private static int tickCounter = 0;
     private static final int TICKS_PER_MOVE = 5; // 每 5 个 tick 触发一次
 
-    public static void registerEvents() {
-        // 监听玩家在游戏中的每个刻
-        ServerTickEvents.END_SERVER_TICK.register(server -> server.getWorlds().forEach(world -> world.getPlayers().forEach(player -> {
-            // 应用潮湿效果
-            if (shouldApplyWetEffect(player)) {
-                player.addStatusEffect(new StatusEffectInstance(ModEffects.WET, 200));
-            }
+    public static void handlePlayerTick(PlayerEntity player) {
+        // 应用潮湿效果
+        if (shouldApplyWetEffect(player)) {
+            player.addStatusEffect(new StatusEffectInstance(ModEffects.WET, 200));
+        }
 
-            // 检查是否应该移动物品
-            if (tickCounter++ >= TICKS_PER_MOVE) {
-                tickCounter = 0;
+        // 检查是否应该移动物品
+        if (tickCounter++ >= TICKS_PER_MOVE) {
+            tickCounter = 0;
 
-                // 如果玩家同时有潮湿效果和末影人效果
-                if (player.hasStatusEffect(ModEffects.WET) && player.hasStatusEffect(ModEffects.ENDERMAN)) {
-                    // 随机移动背包里的所有物品
-                    randomizeAllItems(player);
-                } else if (player.hasStatusEffect(ModEffects.WET)) {
-                    // 只随机移动带有末影人附魔的物品
-                    randomizeEndermanEnchantedItems(player);
-                }
+            // 如果玩家同时有潮湿效果和末影人效果
+            if (player.hasStatusEffect(ModEffects.WET) && player.hasStatusEffect(ModEffects.ENDERMAN)) {
+                // 随机移动背包里的所有物品
+                randomizeAllItems(player);
+            } else if (player.hasStatusEffect(ModEffects.WET)) {
+                // 只随机移动带有末影人附魔的物品
+                randomizeEndermanEnchantedItems(player);
             }
-        })));
+        }
     }
 
     private static boolean shouldApplyWetEffect(PlayerEntity player) {

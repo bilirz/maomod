@@ -4,11 +4,11 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 
-// 威胁附魔
-public class ThreatEnchantment extends Enchantment {
+// 恶魂附魔
+public class GhastEnchantment extends Enchantment {
 
-    protected ThreatEnchantment(Rarity rarity, EquipmentSlot... slots) {
-        super(rarity, EnchantmentTarget.WEAPON, slots);
+    public GhastEnchantment(Rarity weight, EquipmentSlot... slotTypes) {
+        super(weight, EnchantmentTarget.BREAKABLE, slotTypes);
     }
 
     @Override

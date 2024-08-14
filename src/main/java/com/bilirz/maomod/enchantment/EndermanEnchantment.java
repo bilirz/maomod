@@ -11,7 +11,6 @@ public class EndermanEnchantment extends Enchantment {
         super(rarity, EnchantmentTarget.BREAKABLE, slots);
     }
 
-    // 设置附魔的最大等级，默认使用父类的最大等级
     @Override
     public int getMaxLevel() {
         return super.getMaxLevel();
