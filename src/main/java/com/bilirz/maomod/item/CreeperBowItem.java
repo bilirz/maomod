@@ -1,7 +1,7 @@
 package com.bilirz.maomod.item;
 
 import com.bilirz.maomod.enchantment.ModEnchantments;
-import com.bilirz.maomod.entity.CreeperWithEnchantments;
+import com.bilirz.maomod.entity.creeper.CreeperWithEnchantments;
 import com.bilirz.maomod.entity.ModEntities;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.enchantment.EnchantmentHelper;

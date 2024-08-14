@@ -1,4 +1,4 @@
-package com.bilirz.maomod.entity;
+package com.bilirz.maomod.entity.creeper;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.CreeperEntity;

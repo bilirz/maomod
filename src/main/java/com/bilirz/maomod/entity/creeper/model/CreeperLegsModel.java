@@ -1,4 +1,4 @@
-package com.bilirz.maomod.entity;
+package com.bilirz.maomod.entity.creeper.model;
 
 import com.bilirz.maomod.entity.creeper.CreeperLegsEntity;
 import net.minecraft.client.model.*;
