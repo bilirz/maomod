@@ -9,6 +9,7 @@
     "PlayerEntityMixin",
     "PotionEntityMixin",
     "PotionItemMixin",
+    "ThrownEntityMixin",
     "VillagerEntityMixin"
   ],
   "injectors": {
