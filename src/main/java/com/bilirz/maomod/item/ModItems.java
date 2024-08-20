@@ -1,8 +1,10 @@
 package com.bilirz.maomod.item;
 
 import com.bilirz.maomod.Maomod;
+import com.bilirz.maomod.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
@@ -27,6 +29,10 @@ public class ModItems {
     public static final Item DURABLE_BOWL = registerItems("durable_bowl", new Item(new Item.Settings().maxDamage(5))); // 有耐久的碗
     public static final Item DURABLE_BUCKET = registerItems("durable_bucket", new Item(new Item.Settings().maxDamage(5))); // 有耐久的桶
 
+    // 植物大战僵尸
+    public static final Item HYPNO_SHROOM = registerItems("hypno_shroom", new BlockItem(ModBlocks.HYPNO_SHROOM, new Item.Settings())); // 魅惑菇
+    public static final Item DOOM_SHROOM = registerItems("doom_shroom", new BlockItem(ModBlocks.DOOM_SHROOM, new Item.Settings())); // 毁灭菇
+
     // 将自定义物品添加到物品组中
     private static void addItemsToItemGroup(FabricItemGroupEntries fabricItemGroupEntries) {
         fabricItemGroupEntries.add(CREEPER_QUIVER);
@@ -38,6 +44,8 @@ public class ModItems {
         fabricItemGroupEntries.add(CAT_MISSILE);
         fabricItemGroupEntries.add(DURABLE_BOWL);
         fabricItemGroupEntries.add(DURABLE_BUCKET);
+        fabricItemGroupEntries.add(HYPNO_SHROOM);
+        fabricItemGroupEntries.add(DOOM_SHROOM);
     }
 
     // 注册单个物品的方法

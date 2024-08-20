@@ -6,6 +6,7 @@ public class ModEvents {
 
     public static void registerModEvents() {
         ModBlockBreakHandler.register();       // 注册方块破坏事件处理器
+        ModBlockUseHandler.register();
 
         // 注册飞船飞行事件处理器
         ServerTickEvents.END_WORLD_TICK.register(world -> {

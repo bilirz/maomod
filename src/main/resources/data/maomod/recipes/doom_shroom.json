@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TTT",
+    "TMT",
+    "TTT"
+  ],
+  "key": {
+    "T": {
+      "item": "minecraft:tnt"
+    },
+    "M": {
+      "tag": "maomod:mushrooms"
+    }
+  },
+  "result": {
+    "item": "maomod:doom_shroom",
+    "count": 1
+  }
+}
