@@ -6,6 +6,7 @@
     "AreaEffectCloudEntityMixin",
     "BoatEntityMixin",
     "FireballEntityMixin",
+    "MobEntityMixin",
     "PlayerEntityMixin",
     "PotionEntityMixin",
     "PotionItemMixin",

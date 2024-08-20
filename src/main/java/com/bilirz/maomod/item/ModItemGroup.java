@@ -25,6 +25,10 @@ public class ModItemGroup {
                         entries.add(ModItems.CREEPER_EMP);
                         entries.add(ModItems.SPAWNER_SHARD);
                         entries.add(ModItems.CAT_MISSILE);
+                        entries.add(ModItems.DURABLE_BOWL);
+                        entries.add(ModItems.DURABLE_BUCKET);
+                        entries.add(ModItems.HYPNO_SHROOM);
+                        entries.add(ModItems.DOOM_SHROOM);
                     }).build());
 
     // 注册物品组的方法

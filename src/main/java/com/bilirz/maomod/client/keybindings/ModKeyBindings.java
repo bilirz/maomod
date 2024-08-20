@@ -8,8 +8,8 @@ import org.lwjgl.glfw.GLFW;
 
 public class ModKeyBindings {
 
-    private static KeyBinding toggleHudKey; // 切换HUD显示
-    private static boolean isHudVisible = true; // HUD显示状态 (默认为可见)
+    private static KeyBinding toggleHudKey;
+    private static boolean isHudVisible = false; // HUD显示状态 (默认为隐藏)
 
     // 注册自定义按键绑定的方法
     public static void registerKeyBindings() {
