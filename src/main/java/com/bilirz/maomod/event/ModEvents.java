@@ -13,5 +13,8 @@ public class ModEvents {
             // 处理末影人效果相关事件
             world.getPlayers().forEach(EndermanEffectEventHandler::handlePlayerTick);
         });
+
+        BeheadingEventHandler.register();
+        PlunderingEventHandler.register();
     }
 }
