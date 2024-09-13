@@ -14,6 +14,9 @@ import net.minecraft.util.Identifier;
 public class ModItems {
     // 定义并注册自定义物品
 
+    // 女巫与药水
+    public static final Item PING_PONG = registerItems("ping_pong", new Item(new Item.Settings().maxDamage(100))); // 乒乓球拍
+
     // 苦力怕弓相关注册
     public static final Item CREEPER_QUIVER = registerItems("creeper_quiver", new CreeperQuiverItem(new Item.Settings().maxCount(1))); // 苦力怕箭袋
     public static final Item SPAWNER_CREEPER_QUIVER = registerItems("spawner_creeper_quiver", new SpawnerCreeperQuiverItem(new Item.Settings().maxCount(1))); // 刷怪苦力怕箭袋
@@ -35,6 +38,7 @@ public class ModItems {
 
     // 将自定义物品添加到物品组中
     private static void addItemsToItemGroup(FabricItemGroupEntries fabricItemGroupEntries) {
+        fabricItemGroupEntries.add(PING_PONG);
         fabricItemGroupEntries.add(CREEPER_QUIVER);
         fabricItemGroupEntries.add(SPAWNER_CREEPER_QUIVER);
         fabricItemGroupEntries.add(CREEPER_BOW);
