@@ -4,11 +4,11 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 
-// 交易反转附魔
-public class TradeReversalEnchantment extends Enchantment {
+// 再看一眼就会爆炸附魔
+public class ExplosiveGlanceEnchantment extends Enchantment {
 
-    public TradeReversalEnchantment(Rarity rarity, EquipmentSlot... slots) {
-        super(rarity, EnchantmentTarget.WEAPON, slots);
+    public ExplosiveGlanceEnchantment(Rarity rarity, EquipmentSlot... slots) {
+        super(rarity, EnchantmentTarget.BREAKABLE, slots);
     }
 
     @Override
