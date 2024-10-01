@@ -10,6 +10,8 @@
     "PlayerEntityMixin",
     "PotionEntityMixin",
     "PotionItemMixin",
+    "SnowGolemEntityAccessor",
+    "SnowGolemEntityMixin",
     "ThrownEntityMixin",
     "VillagerEntityMixin"
   ],
