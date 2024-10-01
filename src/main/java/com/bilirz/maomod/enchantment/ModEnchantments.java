@@ -19,6 +19,7 @@ public class ModEnchantments {
     public static final Enchantment GHAST = new GhastEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND);
     public static final Enchantment PLUNDERING = new PlunderingEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND);
     public static final Enchantment BEHEADING = new BeheadingEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND);
+    public static final Enchantment EXPLOSIVE_GLANCE = new ExplosiveGlanceEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND);
 
     // 注册自定义附魔的方法
     public static void registerModEnchantments() {
@@ -32,6 +33,7 @@ public class ModEnchantments {
         Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "ghast"), GHAST); // 注册恶魂附魔
         Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "plundering"), PLUNDERING); // 注册抢劫附魔
         Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "beheading"), BEHEADING); // 注册斩首附魔
+        Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "explosive_glance"), EXPLOSIVE_GLANCE); // 注册斩首附魔
 
     }
 }
